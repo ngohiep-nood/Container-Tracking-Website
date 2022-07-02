@@ -1,6 +1,6 @@
-# Flask API Starter Kit
+# Flask API For Container Tracking
 
-Sample API layout structure to be used as a baseline for other apps
+
 
 ## Dependencies
 
@@ -16,19 +16,16 @@ Sample API layout structure to be used as a baseline for other apps
     ```
     pipenv install
     ```
-3. Start the server with:
+3. Build database:
+    ```
+    python run build_db.py
+    ```
+4. Start the server with:
     ```
    pipenv run python -m flask run
     ```
    
-4. Visit http://localhost/api for the home api
+5. Visit http://localhost/ for the home api
 
-4. Visit http://localhost/apidocs for the swagger documentation
+6. Visit http://localhost/upload for the admin upload page
    
-## Tests
-
-The code is covered by tests, to run the tests please execute
-
-```
-pipenv run python -m unittest
-```
