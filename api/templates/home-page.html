@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Container Tracking</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style src="{{ url_for('static', filename='home.css') }}">
+
+  </style>
+  <body class="p-4">
+    {% block content %}
+    <div class="container" id='main'>
+      <h1 class="text-center mb-3">
+        Container Tracking
+      </h1>
+      <form
+        id="form-data"
+        class="row g-3 justify-content-center"
+        action="/search"
+        method="post"
+      >
+        <div class="col-auto">
+          <fieldset>
+            <label for="container-id" class="visually-hidden"
+              >Container ID</label
+            >
+            <input
+              type="text"
+              class="form-control border border-primary"
+              id="container-id"
+              placeholder="Enter container ID"
+              name="id"
+              required
+            />
+          </fieldset>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-outline-primary mb-3">
+            Check
+          </button>
+        </div>
+        <div class="col-auto">
+          <button id="clear-btn" type="button" class="btn btn-outline-danger mb-3">
+            Clear
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div id="display" class="container row mx-auto my-3 justify-content-center">
+      <!-- <img src="#"> -->
+    </div>
+
+    <div class="modal fade" id="modal-container" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-label"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+        type="text/javascript"
+        src="{{ url_for('static', filename='home.js') }}"
+      ></script>
+    {% endblock %}
+  </body>
+</html>

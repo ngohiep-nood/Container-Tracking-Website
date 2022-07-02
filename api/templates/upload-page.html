@@ -1,0 +1,64 @@
+{% extends "home-page.html" %} {% block content %}
+<div class="container">
+  <h1 class="text-center mb-3">Admin page</h1>
+  <form
+    class="row g-3 justify-content-center input-group"
+    action="/upload"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <div class="input-group mb-1">
+      <span class="input-group-text" id="basic-addon1">Container ID</span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Container ID"
+        aria-label="container_id"
+        aria-describedby="basic-addon1"
+        name="id"
+        required
+      />
+    </div>
+
+    <div class="input-group mb-1">
+      <label class="input-group-text" for="inputGroupFile01">Image 1</label>
+      <input type="file" class="form-control" id="inputGroupFile01" name="img1" accept="image/*" required />
+    </div>
+    <div class="input-group mb-1">
+      <label class="input-group-text" for="inputGroupFile01">Image 2</label>
+      <input type="file" class="form-control" id="inputGroupFile01" name="img2" accept="image/*" required />
+    </div>
+
+    <button
+      class="btn btn-outline-secondary"
+      type="submit"
+      id="inputGroupFileAddon04"
+    >
+      Button
+    </button>
+  </form>
+
+  <!-- <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %} {% if category ==
+    'error' %}
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Upload status</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {{ message }}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %} {% endfor %} {% endif %} {% endwith %} -->
+
+</div>
+{% endblock %}
