@@ -11,6 +11,8 @@ apispec = "*"
 python-dotenv = "*"
 flask-sqlalchemy = "*"
 flask-jwt-extended = "*"
+wtforms = "*"
+email-validator = "*"
 
 [dev-packages]
 

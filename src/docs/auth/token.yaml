@@ -1,0 +1,18 @@
+Get access token by refresh token
+---
+tags:
+  - Authentication
+parameters:
+  - name: Authorization
+    description: Local JWT refresh token
+    in: header
+
+responses:
+  200:
+    description: When a user gets token successfully 
+
+  500:
+    description: Something went wrong!
+
+  401:
+    description: Missing authorization header or wrong credentials

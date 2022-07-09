@@ -1,0 +1,14 @@
+Render login page
+---
+tags:
+  - Authentication
+
+responses:
+  200:
+    description: When a user gets login page successfully
+
+  500:
+    description: Something went wrong! Internal server error!
+
+  404:
+    description: The route doesn't exist or is deleted!

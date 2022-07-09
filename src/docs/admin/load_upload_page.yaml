@@ -1,0 +1,14 @@
+Render uploading page
+---
+tags:
+  - Admin
+  
+responses:
+  200:
+    description: When renders uploading page successfully
+
+  401:
+    description: A user supplies incorrect credentials or user unauthorization to take the process
+
+  500:
+    description: Something went wrong.

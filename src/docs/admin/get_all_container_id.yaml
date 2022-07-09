@@ -1,0 +1,17 @@
+Get all container ids
+---
+tags:
+  - Admin
+
+responses:
+  200:
+    description: When getting container ids successfully
+
+  400:
+    description: Fails to login due to bad request data
+
+  401:
+    description: A user supplies incorrect credentials or user unauthorization to take the process
+
+  500:
+    description: Something went wrong.

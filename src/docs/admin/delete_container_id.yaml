@@ -1,0 +1,21 @@
+Delete container ID
+---
+tags:
+  - Admin
+
+parameters:
+  - name: id
+    description: ID string of container to delete
+    in: formData
+    required: true
+    type: string
+
+responses:
+  200:
+    description: When processing successfully
+
+  401:
+    description: A user supplies incorrect credentials or user unauthorization to take the process
+
+  500:
+    description: Something went wrong.

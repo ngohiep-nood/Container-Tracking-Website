@@ -1,0 +1,31 @@
+Update container ID
+---
+tags:
+  - Admin
+
+parameters:
+  - name: id
+    description: ID string of container to update
+    in: formData
+    required: true
+    type: string
+  
+  - name: img1
+    description: the image before to update
+    in: formData
+    type: file
+
+  - name: img2
+    description: the image after to update
+    in: formData
+    type: file
+
+responses:
+  200:
+    description: When processing successfully
+
+  401:
+    description: A user supplies incorrect credentials or user unauthorization to take the process
+
+  500:
+    description: Something went wrong.

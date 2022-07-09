@@ -1,0 +1,14 @@
+Render home page to search container ID
+---
+tags:
+  - User
+
+responses:
+  200:
+    description: When a user gets home page successfully
+
+  500:
+    description: Something went wrong! Internal server error!
+
+  404:
+    description: The route doesn't exist or is deleted!

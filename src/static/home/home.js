@@ -1,14 +1,12 @@
 let form = document.forms["form-data"];
-const clearBtn = document.getElementById("clear-btn");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   let display = document.getElementById("display");
   let myModal = new bootstrap.Modal(document.getElementById('modal-container'))
   let form_data = new FormData(event.target);
-  let cont_id = form_data.get("id").split(',')
 
-  form_data.append("id_list", JSON.stringify(cont_id));
+  form_data.append("id_list", form_data.get("id"));
   
   const resp = await fetch(event.target.action, {
     method: "POST",
@@ -44,9 +42,4 @@ form.addEventListener("submit", async (event) => {
     document.getElementById('modal-body').innerHTML = `Cannot find id: ${err_message.join(', ')}`;
     myModal.toggle();
   }
-});
-
-clearBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  display.innerHTML = "";
 });

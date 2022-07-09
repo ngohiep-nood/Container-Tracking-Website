@@ -16,10 +16,14 @@ form.addEventListener('submit', async(e) => {
     if(body.status == 'success') {
         localStorage.setItem('access-token', body.access_token)
         localStorage.setItem('refresh-token', body.refresh_token)
-        window.location.replace('http://localhost:3000/home/upload')
+        window.location.replace('http://localhost:3000/home')
     } else {
         let myModal = new bootstrap.Modal(document.getElementById('modal-container'))
-        document.getElementById('modal-body').innerHTML = body.message;
+        let messageStr = ''
+        for(const key in body.message) {
+            messageStr += (key + ': ' + body.message[key] + '</br>')
+        }
+        document.getElementById('modal-body').innerHTML = messageStr;
         myModal.toggle();
     }
 })

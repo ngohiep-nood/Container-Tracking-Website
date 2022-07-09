@@ -1,0 +1,39 @@
+User Registration
+---
+tags:
+  - Authentication
+parameters:
+  - name: username
+    description: username
+    in: formData
+    required: true
+    type: string
+
+  - name: email
+    description: email
+    in: formData
+    required: true
+    type: string
+    format: email
+
+  - name: password
+    description: password
+    in: formData
+    required: true
+    type: string
+    format: password
+
+  - name: secret_key
+    description: secret key for admin registration
+    in: formData
+    type: string
+
+responses:
+  201:
+    description: When a user successfully registers
+
+  400:
+    description: Fails to Register due to bad request data
+  
+  500:
+    description: Something went wrong!

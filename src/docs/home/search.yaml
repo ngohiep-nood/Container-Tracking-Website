@@ -1,0 +1,24 @@
+Search container by ID
+---
+tags:
+  - User
+parameters:
+  - name: id_list
+    description: List of container ids which separated by commas 
+    in: formData
+    required: true
+    type: string
+
+responses:
+  200:
+    description: When searching process returns the list of results
+
+  400:
+    description: Fails to login due to bad request data
+  
+  404:
+    description: Route not found!
+
+  500:
+    description: Something went wrong.
+

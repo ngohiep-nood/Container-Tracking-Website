@@ -1,0 +1,37 @@
+Upload container ID
+---
+tags:
+  - Admin
+parameters:
+  - name: id
+    description: ID string of container 
+    in: formData
+    required: true
+    type: string
+
+  - name: img1
+    description: the image before container is moved
+    in: formData
+    required: true
+    type: file
+
+  - name: img2
+    description: the image after container is moved
+    in: formData
+    required: true
+    type: file
+    
+
+
+responses:
+  200:
+    description: When uploading container ids successfully
+
+  400:
+    description: Fails to login due to bad request data
+
+  401:
+    description: A user supplies incorrect credentials or user unauthorization to take the process
+
+  500:
+    description: Something went wrong.
